@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hardtekk-Grüne Mitsubishi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="console">
+  <div class="console-top">
+    <div class="power-led"></div>
+    <span class="console-brand">Hardtekk-Grüne&nbsp;Mitsubishi</span>
+  </div>
+
+  <div class="screen-bezel">
+    <div class="screen-area" id="screen-area">
+
+      <canvas id="gbscreen" width="480" height="432"></canvas>
+
+      <!-- ================= TITLE ================= -->
+      <div id="screen-title" class="screen">
+        <h1 id="game-title" class="title-logo">Hardtekk-Grüne Mitsubishi</h1>
+        <p class="title-sub">Ein Underground-RPG</p>
+        <button id="btn-goto-login" class="gb-menu-btn">Anmelden</button>
+        <button id="btn-guest" class="gb-menu-btn">Gastmodus</button>
+        <p id="guest-note" class="small-note hidden">
+          Hinweis: Supabase ist nicht konfiguriert – es läuft nur der Gastmodus (lokaler Speicherstand).
+        </p>
+      </div>
+
+      <!-- ================= AUTH ================= -->
+      <div id="screen-auth" class="screen hidden">
+        <h2 class="section-title">Login / Registrierung</h2>
+        <form id="auth-form" class="auth-form">
+          <label>
+            E-Mail
+            <input type="email" id="auth-email" required autocomplete="email" />
+          </label>
+          <label>
+            Passwort
+            <input type="password" id="auth-password" required minlength="6" autocomplete="current-password" />
+          </label>
+          <div class="auth-mode">
+            <label><input type="radio" name="auth-mode" value="login" checked /> Einloggen</label>
+            <label><input type="radio" name="auth-mode" value="signup" /> Registrieren</label>
+          </div>
+          <p id="auth-error" class="auth-error"></p>
+          <button type="submit" class="gb-menu-btn">Bestätigen</button>
+        </form>
+      </div>
+
+      <!-- ================= GAME (Overworld) ================= -->
+      <div id="screen-game" class="screen hidden"></div>
+
+      <!-- ================= TEAM / RECORDBANK ================= -->
+      <div id="screen-team" class="screen hidden">
+        <h2 class="section-title">Dein Team</h2>
+        <div id="team-list" class="team-list"></div>
+        <p id="team-samples"></p>
+        <p id="team-gigs"></p>
+        <button id="btn-close-team" class="gb-menu-btn">Zurück</button>
+        <button id="btn-logout" class="gb-menu-btn ghost">Ausloggen</button>
+      </div>
+
+      <!-- ================= BATTLE ================= -->
+      <div id="screen-battle" class="screen hidden">
+        <div class="battle-hud">
+          <div class="hud-enemy">
+            <span id="battle-enemy-name"></span>
+            <span id="battle-enemy-level"></span>
+            <div id="battle-enemy-hp" class="hp-bar"><div class="hp-fill"></div><span class="hp-label"></span></div>
+          </div>
+          <div class="hud-player">
+            <span id="battle-player-name"></span>
+            <span id="battle-player-level"></span>
+            <div id="battle-player-hp" class="hp-bar"><div class="hp-fill"></div><span class="hp-label"></span></div>
+          </div>
+        </div>
+
+        <div id="battle-root-menu" class="battle-menu">
+          <button id="btn-fight" class="gb-menu-btn">Kämpfen</button>
+          <button id="btn-catch" class="gb-menu-btn">Sample</button>
+          <button id="btn-battle-team" class="gb-menu-btn">Team</button>
+          <button id="btn-run" class="gb-menu-btn">Flucht</button>
+        </div>
+        <div id="move-buttons" class="battle-menu hidden"></div>
+        <div id="battle-team-switch" class="battle-menu hidden">
+          <div id="battle-team-list" class="team-list"></div>
+        </div>
+      </div>
+
+      <!-- ================= DIALOG-BOX (Overlay über allen Screens) ================= -->
+      <div id="dialog-box" class="dialog-box hidden">
+        <p id="dialog-text"></p>
+        <span class="dialog-hint">▼ A</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="dpad">
+      <button class="dpad-btn dpad-up" data-gb-button="up" aria-label="Hoch">▲</button>
+      <button class="dpad-btn dpad-left" data-gb-button="left" aria-label="Links">◀</button>
+      <button class="dpad-btn dpad-center" disabled></button>
+      <button class="dpad-btn dpad-right" data-gb-button="right" aria-label="Rechts">▶</button>
+      <button class="dpad-btn dpad-down" data-gb-button="down" aria-label="Runter">▼</button>
+    </div>
+
+    <div class="ab-buttons">
+      <button class="round-btn btn-b" data-gb-button="b">B</button>
+      <button class="round-btn btn-a" data-gb-button="a">A</button>
+    </div>
+  </div>
+
+  <div class="meta-buttons">
+    <button class="pill-btn" data-gb-button="select">Select</button>
+    <button class="pill-btn" data-gb-button="start">Start</button>
+  </div>
+
+  <div class="speaker">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
