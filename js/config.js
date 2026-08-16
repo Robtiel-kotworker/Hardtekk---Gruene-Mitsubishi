@@ -11,8 +11,8 @@
 // ============================================================================
 
 export const SUPABASE_CONFIG = {
-  url: "", // z.B. "https://xxxxxxxxxxxx.supabase.co"
-  anonKey: "", // z.B. "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  url: "https://mmoldfoqtpwwzjppffad.supabase.co", // z.B. "https://xxxxxxxxxxxx.supabase.co"
+  anonKey: "sb_publishable_oc5ZfsPwe2JSrmLu0EcxSQ_jsdMCU_K", // z.B. "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 };
 
 export const GAME_CONFIG = {
