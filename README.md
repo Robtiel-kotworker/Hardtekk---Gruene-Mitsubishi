@@ -1,6 +1,6 @@
 # Hardtekk-Grüne Mitsubishi
 
-Ein rundenbasiertes Browser-RPG im Look eines klassischen Handheld-Konsolen-Gehäuses
+Ein rundenbasiertes Browser-RPG im Look eines klassischen Handheld-Konsolen-Gehäuses 
 (D-Pad, A/B, Start/Select – alles im Bild), stark angelehnt an das Genre der
 90er/00er-Monster-Sammel-RPGs. Statt Monster fängt und trainiert man **Hardtekk-Tracks**:
 Hardtechno-/Hardstyle-Tracks mit völlig durchgeknallten Namen, die man in freier
